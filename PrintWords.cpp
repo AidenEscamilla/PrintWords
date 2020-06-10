@@ -45,6 +45,9 @@ Testing commit # 2
 int main()
 {
     string topMessage[7][NUM_COLUMNS];
+    string middleMessage1[7][NUM_COLUMNS];
+    string middleMessage2[7][NUM_COLUMNS];
+    string middleMessage3[7][NUM_COLUMNS];
     string bottomMessage[7][NUM_COLUMNS];
     string phraseEntered;
     int phraseLength;
@@ -84,9 +87,21 @@ int main()
 
     for(int i = 0; i < phraseLength; i++)
     {
-        if(i > 13)
+        if(i > 52)
         {
             setLetter(bottomMessage,toupper(phraseEntered[i]));
+        }
+        else if(i > 39)
+        {
+            setLetter(middleMessage3,toupper(phraseEntered[i]));
+        }
+        else if(i > 26)
+        {
+            setLetter(middleMessage2,toupper(phraseEntered[i]));
+        }
+        else if(i > 13)
+        {
+            setLetter(middleMessage1,toupper(phraseEntered[i]));
         }
         else
         {
@@ -95,7 +110,6 @@ int main()
         
     }
     
-
     cout << "Printing top message" << endl;
     for(int i = 0; i < 7; i++)
     {
@@ -103,12 +117,42 @@ int main()
     }
     cout << endl;
 
-    cout << "Printing bottom message" << endl;
-    for(int i = 0; i < 7; i++)
+    if(middleMessage1[0][0] != "")
     {
-        cout << bottomMessage[i][0] << endl;
+        cout << "Printing next message" << endl;
+        for(int i = 0; i < 7; i++)
+        {
+            cout << middleMessage1[i][0] << endl;
+        }
+        cout << endl;
     }
-    cout << endl;
+    if(middleMessage2[0][0] != "")
+    {
+        cout << "Printing next message" << endl;
+        for(int i = 0; i < 7; i++)
+        {
+            cout << middleMessage2[i][0] << endl;
+        }
+        cout << endl;
+    }
+    if(middleMessage3[0][0] != "")
+    {
+        cout << "Printing next message" << endl;
+        for(int i = 0; i < 7; i++)
+        {
+            cout << middleMessage3[i][0] << endl;
+        }
+        cout << endl;
+    }
+    if(bottomMessage[0][0] != "")
+    {
+        cout << "Printing bottom message" << endl;
+        for(int i = 0; i < 7; i++)
+        {
+            cout << bottomMessage[i][0] << endl;
+        }
+        cout << endl;
+    }
 
     cout << "Exiting" << endl;
     return 0;
