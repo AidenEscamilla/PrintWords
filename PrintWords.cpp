@@ -37,6 +37,10 @@ void apostrophe(string message[][NUM_COLUMNS]);
 void exclamation(string message[][NUM_COLUMNS]);
 void setLetter(string messageArray[][NUM_COLUMNS],char charEntered);
 
+/*
+Testing commit # 2
+*/
+
 
 int main()
 {
