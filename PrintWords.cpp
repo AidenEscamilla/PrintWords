@@ -2,6 +2,7 @@
 #include<iomanip>
 #include<string>
 #include<cctype>
+#include<cmath>
 
 using namespace std;
 const int NUM_COLUMNS = 1;
@@ -51,12 +52,43 @@ int main()
     string bottomMessage[7][NUM_COLUMNS];
     string phraseEntered;
     int phraseLength;
+    int numLines;
+
+
 
     cout << "Enter a phrase: " << endl;
     getline(cin,phraseEntered);
 
     phraseLength = phraseEntered.length();
     cout << "Phrase length = " << phraseLength << endl;
+
+    numLines = ceil(static_cast<double>(phraseLength) / 13);
+
+    string tempMessage[7][NUM_COLUMNS];
+
+    for(int k = 0; k < phraseLength; k++)
+    {
+            if((k % 13 == 0) && (k != 0)) //for every new line
+            {
+                for(int x = 0; x < 7; x++)  //for every string in message
+                {
+                    cout << tempMessage[x][0] << endl;    //print the string then
+                    tempMessage[x][0] = "";   //reset string to empty
+                }
+                cout << "    ####################################################################################################################################################################################################################" << endl << endl;
+
+            }
+            
+            setLetter(tempMessage,toupper(phraseEntered[k]));
+    }
+    if(phraseLength %13 != 0)
+    {
+        for(int i = 0; i < 7; i++)  //for the message
+                {
+                    cout << tempMessage[i][0] << endl;    //print the string then
+                }
+                cout << endl;
+    }
 
     /*LetterA(topMessage);
     LetterB(topMessage);
@@ -85,7 +117,7 @@ int main()
     LetterY(bottomMessage);
     LetterZ(bottomMessage);*/
 
-    for(int i = 0; i < phraseLength; i++)
+    /*for(int i = 0; i < phraseLength; i++)
     {
         if(i > 52)
         {
@@ -153,7 +185,7 @@ int main()
         }
         cout << endl;
     }
-
+    */
     cout << "Exiting" << endl;
     return 0;
 }
