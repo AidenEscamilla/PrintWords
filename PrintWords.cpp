@@ -3,11 +3,21 @@
 #include<string>
 #include<cctype>
 #include<cmath>
+#include<map>
 
 using namespace std;
-const int NUM_COLUMNS = 1;
 
-void LetterA(string message[][NUM_COLUMNS]);
+const int NUM_COLUMNS = 1;
+const string SPACE = "    ";
+
+map<char, string*> ASCII_MAP = map<char, string*>();
+
+void initAsciiMap();
+bool asciiMapContains(const char charEnter);
+string* getAsciiMap(char letter);
+void printLetter(string message[][NUM_COLUMNS], const char letter);
+void putAsciiMap(char letter, const string lines[], size_t numLines);
+
 void LetterB(string message[][NUM_COLUMNS]);
 void LetterC(string message[][NUM_COLUMNS]);
 void LetterD(string message[][NUM_COLUMNS]);
@@ -42,9 +52,59 @@ void setLetter(string messageArray[][NUM_COLUMNS],char charEntered);
 Testing commit # 2
 */
 
+void initAsciiMap() {
+    putAsciiMap('A', (string[]) {
+        "      *      ",
+        "     * *     ",
+        "    *   *    ",
+        "   *******   ",
+        "  *       *  ",
+        " *         * ",
+        "*           *",
+    }, 7);
+}
+
+bool asciiMapContains(const char charEnter) {
+    return ASCII_MAP.find(charEnter) != ASCII_MAP.end();
+}
+
+string* getAsciiMap(char letter) {
+    map<char, string*>::iterator it = ASCII_MAP.find(letter);
+    if (it == ASCII_MAP.end()) {
+        return nullptr;
+    } else {
+        return it->second;
+    }
+}
+
+void printLetter(string message[][NUM_COLUMNS], const char letter)
+{
+    string* letterMap = getAsciiMap(letter);
+    if (letterMap == nullptr) {
+        // silently fail
+    } else {
+        for (int i = 0; i < 7; i++) {
+            message[i][0] += SPACE;
+            message[i][0] += letterMap[i];
+        }
+    }
+}
+
+/**
+ * Copies literal and saves in ASCII_MAP
+ */
+void putAsciiMap(char letter, const string lines[], size_t numLines) {
+    string* dupeLines = new string[numLines];
+    for (size_t i = 0; i < numLines; i++) {
+        dupeLines[i] = string(lines[i]);
+    }
+    ASCII_MAP.insert(pair<char, string*>(letter, dupeLines));
+}
 
 int main()
 {
+    initAsciiMap();
+
     string topMessage[7][NUM_COLUMNS];
     string middleMessage1[7][NUM_COLUMNS];
     string middleMessage2[7][NUM_COLUMNS];
@@ -140,9 +200,9 @@ int main()
         {
             setLetter(topMessage,toupper(phraseEntered[i]));
         }
-        
+
     }
-    
+
     cout << "Printing top message" << endl;
     for(int i = 0; i < 7; i++)
     {
@@ -189,27 +249,6 @@ int main()
     */
     cout << "Exiting" << endl;
     return 0;
-}
-
-void LetterA(string message[][NUM_COLUMNS])
-{
-    string space = "    ";
-    string A[7][1] = {
-                      {"      *      "},
-                      {"     * *     "},
-                      {"    *   *    "},
-                      {"   *******   "},
-                      {"  *       *  "},
-                      {" *         * "},
-                      {"*           *"}
-                      };
-
-    for(int i = 0; i < 7; i++)
-    {
-        message[i][0] += space;
-
-        message[i][0] += A[i][0];
-    }
 }
 
 void LetterB(string message[][NUM_COLUMNS])
@@ -813,11 +852,13 @@ void question(string message[][NUM_COLUMNS])
 
 void setLetter(string messageArray[][NUM_COLUMNS],char charEntered)
 {
+    if (asciiMapContains(charEntered)) {
+        printLetter(messageArray, charEntered);
+        return;
+    }
+
     switch(charEntered)
         {
-        case 'A':
-            LetterA(messageArray);
-            break;
         case 'B':
             LetterB(messageArray);
             break;
