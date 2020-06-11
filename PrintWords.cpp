@@ -200,9 +200,9 @@ int main()
         {
             setLetter(topMessage,toupper(phraseEntered[i]));
         }
-        
+
     }
-    
+
     cout << "Printing top message" << endl;
     for(int i = 0; i < 7; i++)
     {
