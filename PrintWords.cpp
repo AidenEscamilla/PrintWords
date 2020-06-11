@@ -873,6 +873,11 @@ void question(string message[][NUM_COLUMNS])
 
 void setLetter(string messageArray[][NUM_COLUMNS],char charEntered)
 {
+    if (asciiMapContains(charEntered)) {
+        printLetter(messageArray, charEntered);
+        return;
+    }
+
     switch(charEntered)
         {
         case 'A':
