@@ -251,27 +251,6 @@ int main()
     return 0;
 }
 
-void LetterA(string message[][NUM_COLUMNS])
-{
-    string space = "    ";
-    string A[7][1] = {
-                      {"      *      "},
-                      {"     * *     "},
-                      {"    *   *    "},
-                      {"   *******   "},
-                      {"  *       *  "},
-                      {" *         * "},
-                      {"*           *"}
-                      };
-
-    for(int i = 0; i < 7; i++)
-    {
-        message[i][0] += space;
-
-        message[i][0] += A[i][0];
-    }
-}
-
 void LetterB(string message[][NUM_COLUMNS])
 {
     string space = "    ";
@@ -880,9 +859,6 @@ void setLetter(string messageArray[][NUM_COLUMNS],char charEntered)
 
     switch(charEntered)
         {
-        case 'A':
-            LetterA(messageArray);
-            break;
         case 'B':
             LetterB(messageArray);
             break;
