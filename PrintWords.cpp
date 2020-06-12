@@ -18,7 +18,7 @@ string* getAsciiMap(char letter);
 void printLetter(string message[][NUM_COLUMNS], const char letter);
 void putAsciiMap(char letter, const string lines[], size_t numLines);
 
-void LetterB(string message[][NUM_COLUMNS]);
+/*void LetterB(string message[][NUM_COLUMNS]);
 void LetterC(string message[][NUM_COLUMNS]);
 void LetterD(string message[][NUM_COLUMNS]);
 void LetterE(string message[][NUM_COLUMNS]);
@@ -43,14 +43,12 @@ void LetterW(string message[][NUM_COLUMNS]);
 void LetterX(string message[][NUM_COLUMNS]);
 void LetterY(string message[][NUM_COLUMNS]);
 void LetterZ(string message[][NUM_COLUMNS]);
+*/
 void addSpace(string message[][NUM_COLUMNS]);
 void apostrophe(string message[][NUM_COLUMNS]);
 void exclamation(string message[][NUM_COLUMNS]);
 void setLetter(string messageArray[][NUM_COLUMNS],char charEntered);
-
-/*
-Testing commit # 2
-*/
+                      
 
 void initAsciiMap() {
     putAsciiMap('A', (string[]) {
@@ -62,6 +60,257 @@ void initAsciiMap() {
         " *         * ",
         "*           *",
     }, 7);
+
+    putAsciiMap('B', (string[]) {
+        "*********  ",
+        "*         *",
+        "*         *",
+        "*********  ",
+        "*         *",
+        "*         *",
+        "********** ",
+    }, 7);
+
+    putAsciiMap('C', (string[]) {
+        "  **********",
+        "**          ",
+        "**          ",
+        "**          ",
+        "**          ",
+        "**          ",
+        "  **********",
+    }, 7);
+
+    putAsciiMap('D', (string[]) {
+        "***********  ",
+        "*          **",
+        "*          **",
+        "*          **",
+        "*          **",
+        "*          **",
+        "***********  ",
+    }, 7);
+
+    putAsciiMap('E', (string[]) {
+        "***********",
+        "*          ",
+        "*          ",
+        "***********",
+        "*          ",
+        "*          ",
+        "***********",
+    }, 7);
+
+    putAsciiMap('F', (string[]) {
+        "***********",
+        "*          ",
+        "*          ",
+        "***********",
+        "*          ",
+        "*          ",
+        "*          ",
+    }, 7);
+
+    putAsciiMap('G', (string[]) {
+        " ********** ",
+        "**          ",
+        "**          ",
+        "**     *****",
+        "**         *",
+        "**         *",
+        " ***********",
+    }, 7);
+
+    putAsciiMap('H', (string[]) {
+        "*          *",
+        "*          *",
+        "*          *",
+        "************",
+        "*          *",
+        "*          *",
+        "*          *",
+    }, 7);
+
+    putAsciiMap('I', (string[]) {
+        "************",
+        "      *     ",
+        "      *     ",
+        "      *     ",
+        "      *     ",
+        "      *     ",
+        "************",
+    }, 7);
+
+    putAsciiMap('J', (string[]) {
+        "  ******",
+        "       *",
+        "       *",
+        "       *",
+        "       *",
+        "****   *",
+        "   *****",
+    }, 7);
+
+    putAsciiMap('K', (string[]) {
+        "*      *",
+        "*    *  ",
+        "*  *    ",
+        "***     ",
+        "*  *    ",
+        "*    *  ",
+        "*      *",
+    }, 7);
+
+    putAsciiMap('L', (string[]) {
+        "*          ",
+        "*          ",
+        "*          ",
+        "*          ",
+        "*          ",
+        "*          ",
+        "***********",
+    }, 7);
+
+    putAsciiMap('M', (string[]) {
+        "*           *",
+        "* *       * *",
+        "*   *   *   *",
+        "*     *     *",
+        "*           *",
+        "*           *",
+        "*           *",
+    }, 7);
+
+    putAsciiMap('N', (string[]) {
+        "*           *",
+        "* *         *",
+        "*   *       *",
+        "*     *     *",
+        "*       *   *",
+        "*         * *",
+        "*           *",
+    }, 7);
+
+    putAsciiMap('O', (string[]) {
+        " ********* ",
+        "*         *",
+        "*         *",
+        "*         *",
+        "*         *",
+        "*         *",
+        " ********* ",
+    }, 7);
+
+    putAsciiMap('P', (string[]) {
+        "********** ",
+        "*         *",
+        "*         *",
+        "********** ",
+        "*          ",
+        "*          ",
+        "*          ",
+    }, 7);
+
+    putAsciiMap('Q', (string[]) {
+        " ********** ",
+        "*          *",
+        "*          *",
+        "*          *",
+        "*       *  *",
+        "*         * ",
+        " ********  *",
+    }, 7);
+
+    putAsciiMap('R', (string[]) {
+        "*********   ",
+        "*         * ",
+        "*         * ",
+        "*********   ",
+        "*        *  ",
+        "*         * ",
+        "*          *",
+    }, 7);
+
+    putAsciiMap('S', (string[]) {
+        "     ******  ",
+        "   **      **",
+        "   **        ",
+        "     ****    ",
+        "         **  ",
+        " **      **  ",
+        "   ******    ",
+    }, 7);
+
+    putAsciiMap('T', (string[]) {
+        "************",
+        "      *     ",
+        "      *     ",
+        "      *     ",
+        "      *     ",
+        "      *     ",
+        "      *     ",
+    }, 7);
+
+    putAsciiMap('U', (string[]) {
+        "*          *",
+        "*          *",
+        "*          *",
+        "*          *",
+        "*          *",
+        "*          *",
+        " ********** ",
+    }, 7);
+
+    putAsciiMap('V', (string[]) {
+        "*           *",
+        " *         * ",
+        "  *       *  ",
+        "   *     *   ",
+        "    *   *    ",
+        "     * *     ",
+        "      *      ",
+    }, 7);
+
+    putAsciiMap('W', (string[]) {
+        "*          *",
+        "*          *",
+        "*          *",
+        "*          *",
+        "*    **    *",
+        " *  *  *  * ",
+        "  **    **  ",
+    }, 7);
+
+    putAsciiMap('X', (string[]) {
+        "*           *",
+        "  *       *  ",
+        "    *   *    ",
+        "      *      ",
+        "    *   *    ",
+        "  *       *  ",
+        "*           *",
+    }, 7);
+
+    putAsciiMap('Y', (string[]) {
+        "*           *",
+        "  *       *  ",
+        "    *   *    ",
+        "      *      ",
+        "      *      ",
+        "      *      ",
+        "      *      ",
+    }, 7);
+
+    putAsciiMap('Z', (string[]) {
+        "***********",
+        "         * ",
+        "       *   ",
+        "     *     ",
+        "   *       ",
+        " *         ",
+        "***********",
+    }, 7);
+    
 }
 
 bool asciiMapContains(const char charEnter) {
@@ -105,11 +354,11 @@ int main()
 {
     initAsciiMap();
 
-    string topMessage[7][NUM_COLUMNS];
-    string middleMessage1[7][NUM_COLUMNS];
-    string middleMessage2[7][NUM_COLUMNS];
-    string middleMessage3[7][NUM_COLUMNS];
-    string bottomMessage[7][NUM_COLUMNS];
+    //string topMessage[7][NUM_COLUMNS];
+    //string middleMessage1[7][NUM_COLUMNS];
+    //string middleMessage2[7][NUM_COLUMNS];
+    //string middleMessage3[7][NUM_COLUMNS];
+    ////string bottomMessage[7][NUM_COLUMNS];
     string phraseEntered;
     int phraseLength;
     int numLines;
@@ -151,106 +400,10 @@ int main()
                 cout << endl;
     }
 
-    /*LetterA(topMessage);
-    LetterB(topMessage);
-    LetterC(topMessage);
-    LetterD(topMessage);
-    LetterE(topMessage);
-    LetterF(topMessage);
-    LetterG(topMessage);
-    LetterH(topMessage);
-    LetterI(topMessage);
-    LetterJ(topMessage);
-    LetterK(topMessage);
-    LetterL(topMessage);
-    LetterM(topMessage);
-    LetterN(topMessage);
-    LetterO(topMessage);
-    LetterP(topMessage);
-    LetterQ(bottomMessage);
-    LetterR(bottomMessage);
-    LetterS(bottomMessage);
-    LetterT(bottomMessage);
-    LetterU(bottomMessage);
-    LetterV(bottomMessage);
-    LetterW(bottomMessage);
-    LetterX(bottomMessage);
-    LetterY(bottomMessage);
-    LetterZ(bottomMessage);*/
-
-    /*for(int i = 0; i < phraseLength; i++)
-    {
-        if(i > 52)
-        {
-            setLetter(bottomMessage,toupper(phraseEntered[i]));
-        }
-        else if(i > 39)
-        {
-            setLetter(middleMessage3,toupper(phraseEntered[i]));
-        }
-        else if(i > 26)
-        {
-            setLetter(middleMessage2,toupper(phraseEntered[i]));
-        }
-        else if(i > 13)
-        {
-            setLetter(middleMessage1,toupper(phraseEntered[i]));
-        }
-        else
-        {
-            setLetter(topMessage,toupper(phraseEntered[i]));
-        }
-
-    }
-
-    cout << "Printing top message" << endl;
-    for(int i = 0; i < 7; i++)
-    {
-        cout << topMessage[i][0] << endl;
-    }
-    cout << endl;
-
-    if(middleMessage1[0][0] != "")
-    {
-        cout << "Printing next message" << endl;
-        for(int i = 0; i < 7; i++)
-        {
-            cout << middleMessage1[i][0] << endl;
-        }
-        cout << endl;
-    }
-    if(middleMessage2[0][0] != "")
-    {
-        cout << "Printing next message" << endl;
-        for(int i = 0; i < 7; i++)
-        {
-            cout << middleMessage2[i][0] << endl;
-        }
-        cout << endl;
-    }
-    if(middleMessage3[0][0] != "")
-    {
-        cout << "Printing next message" << endl;
-        for(int i = 0; i < 7; i++)
-        {
-            cout << middleMessage3[i][0] << endl;
-        }
-        cout << endl;
-    }
-    if(bottomMessage[0][0] != "")
-    {
-        cout << "Printing bottom message" << endl;
-        for(int i = 0; i < 7; i++)
-        {
-            cout << bottomMessage[i][0] << endl;
-        }
-        cout << endl;
-    }
-    */
     cout << "Exiting" << endl;
     return 0;
 }
-
+/*
 void LetterB(string message[][NUM_COLUMNS])
 {
     string space = "    ";
@@ -775,7 +928,7 @@ void LetterZ(string message[][NUM_COLUMNS])
         message[i][0] += Z[i][0];
     }
 }
-
+*/
 void addSpace(string message[][NUM_COLUMNS])
 {
     string space = "        ";
@@ -853,13 +1006,13 @@ void question(string message[][NUM_COLUMNS])
 void setLetter(string messageArray[][NUM_COLUMNS],char charEntered)
 {
     if (asciiMapContains(charEntered)) {
-        printLetter(messageArray, charEntered);
+            printLetter(messageArray, charEntered);
         return;
     }
 
     switch(charEntered)
         {
-        case 'B':
+        /*case 'B':
             LetterB(messageArray);
             break;
         case 'C':
@@ -934,6 +1087,7 @@ void setLetter(string messageArray[][NUM_COLUMNS],char charEntered)
         case 'Z':
             LetterZ(messageArray);
             break;
+        */
         case '\'':
             apostrophe(messageArray);
             break;
