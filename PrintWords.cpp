@@ -375,7 +375,7 @@ int main()
 
     string tempMessage[7][NUM_COLUMNS];
 
-    for(int k = 0; k < phraseLength; k++)
+    for(int k = 0; k < phraseLength; k++)   //add each char to the message
     {
             if((k % 13 == 0) && (k != 0)) //for every new line
             {
@@ -391,7 +391,7 @@ int main()
             
             setLetter(tempMessage,toupper(phraseEntered[k]));
     }
-    if(phraseLength %13 != 0 || phraseLength == 13)
+    if(phraseLength %13 != 0 || phraseLength == 13) //print messages < 13 chars and final lines if phraselength %13 != 0
     {
         for(int i = 0; i < 7; i++)  //for the message
                 {
