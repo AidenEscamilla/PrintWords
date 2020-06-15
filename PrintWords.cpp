@@ -282,6 +282,116 @@ void initAsciiMap() {
         "***********",
     }, 7);
 
+    putAsciiMap('1', (string[]) {
+        "     *    ",
+        "   * *    ",
+        " *   *    ",
+        "     *    ",
+        "     *    ",
+        "     *    ",
+        " ******** ",
+    }, 7);
+
+    putAsciiMap('2', (string[]) {
+        "  ***** ",
+        " *     *",
+        "       *",
+        "     *  ",
+        "   *    ",
+        " *      ",
+        "********",
+    }, 7);
+
+    putAsciiMap('3', (string[]) {
+        " ****** ",
+        "*      *",
+        "       *",
+        "  ***** ",
+        "       *",
+        "*      *",
+        " ****** ",
+    }, 7);
+
+    putAsciiMap('4', (string[]) {
+        "*      *",
+        "*      *",
+        "*      *",
+        "********",
+        "       *",
+        "       *",
+        "       *",
+    }, 7);
+
+    putAsciiMap('5', (string[]) {
+        "********",
+        "*       ",
+        "*       ",
+        "********",
+        "       *",
+        "       *",
+        "********",
+    }, 7);
+
+    putAsciiMap('6', (string[]) {
+        " ****** ",
+        "*       ",
+        "*       ",
+        " ****** ",
+        "*      *",
+        "*      *",
+        " ****** ",
+    }, 7);
+
+    putAsciiMap('7', (string[]) {
+        "********",
+        "       *",
+        "      * ",
+        "     *  ",
+        "    *   ",
+        "   *    ",
+        "  *     ",
+    }, 7);
+
+    putAsciiMap('8', (string[]) {
+        " ****** ",
+        "*      *",
+        "*      *",
+        " ****** ",
+        "*      *",
+        "*      *",
+        " ****** ",
+    }, 7);
+    
+    putAsciiMap('9', (string[]) {
+        "********",
+        "*      *",
+        "*      *",
+        "********",
+        "       *",
+        "       *",
+        "       *",
+    }, 7);
+
+    putAsciiMap('0', (string[]) {
+        " ****** ",
+        "*      *",
+        "*      *",
+        "*      *",
+        "*      *",
+        "*      *",
+        " ****** ",
+    }, 7);
+
+    putAsciiMap(' ', (string[]) {
+        SPACE,
+        SPACE,
+        SPACE,
+        SPACE,
+        SPACE,
+        SPACE,
+        SPACE,
+    }, 7);
+
     putAsciiMap('\'', (string[]) {
         "   *****",
         "  ***** ",
@@ -312,16 +422,16 @@ void initAsciiMap() {
         "  ***  ",
     }, 7);
 
-    putAsciiMap(' ', (string[]) {
-        SPACE,
-        SPACE,
-        SPACE,
-        SPACE,
-        SPACE,
-        SPACE,
-        SPACE,
+    putAsciiMap(',', (string[]) {
+        "      ",
+        "      ",
+        "      ",
+        "      ",
+        "  ****",
+        " ***  ",
+        "**    ",
     }, 7);
-    
+
 }
 
 bool asciiMapContains(const char charEnter) {
@@ -363,6 +473,8 @@ void putAsciiMap(char letter, const string lines[], size_t numLines) {
     //delete [] dupeLines;    //seeing if this breaks it
 }
 
+
+//Reminder add numbers later
 int main()
 {
     initAsciiMap();
@@ -385,7 +497,6 @@ int main()
     {
             if((k % 13 == 0) && (k != 0)) //for every new line
             {
-                cout << "k = " << k << endl;
                 for(int x = 0; x < 7; x++)  //for every string in message
                 {
                     printMessageLine(tempMessage, x);    //print the string then
@@ -420,6 +531,7 @@ void setLetter(string messageArray[][NUM_COLUMNS],char charEntered)
     else
     {
         cout << "Hello i was too lazy to put in a throw here" << endl;
+        cout << "undefined char = " << charEntered << endl;
     }
 }
 
