@@ -527,8 +527,8 @@ int main()
             }
             for(int g = 0; g < wordCounter; g++)
             {
-                string tempS = *wordHolder;
-                setLetter(lineMessage,toupper(tempS[g]));
+                string tempS = wordHolder[g];
+                setLetter(lineMessage,toupper(tempS[0]));
             }
             cout << endl;
         }
