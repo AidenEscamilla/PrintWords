@@ -480,7 +480,7 @@ int main()
     initAsciiMap();
 
     string phraseEntered;
-    int phraseLength;
+    int phraseLength, characterCounter = 0;
     int numLines,wordCounter = 0, spaceCounter = 0;
     bool wordCutOff = true;
 
@@ -517,34 +517,38 @@ int main()
         else
             wordCutOff = true;
 
-        if(wordCutOff && (k % 13 == 0) && k!= 0)
+        if(wordCutOff && (characterCounter % 13 == 0) && k!= 0)
         {
             for(int x = 0; x < 7; x++)  //for every string in message
             {
                 printMessageLine(tempMessage, x);    //print the string then
                 tempMessage[x][0] = "";   //reset string to empty
                 lineMessage[x][0] = "";
+                characterCounter = 0;
             }
             for(int g = 0; g < wordCounter; g++)
             {
                 string tempS = wordHolder[g];
                 setLetter(lineMessage,toupper(tempS[0]));
+                characterCounter++;
             }
             cout << endl;
         }
         else
         {
-            if((k % 13) == 0 && (k != 0)) //for every 13 characters
+            if((characterCounter % 13) == 0 && (k != 0)) //for every 13 characters
             {
                 for(int x = 0; x < 7; x++)  //for every string in message
                 {
                     printMessageLine(lineMessage, x);    //print the string then
                     lineMessage[x][0] = "";   //reset string to empty
+                    characterCounter = 0;
                 }
                 cout << endl;
             }
         }
         setLetter(lineMessage,toupper(phraseEntered[k]));
+        characterCounter++;
         wordHolder[wordCounter] = phraseEntered[k];
         wordCounter++;
         if(phraseEntered[k] == ' ')
