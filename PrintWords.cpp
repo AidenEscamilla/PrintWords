@@ -432,6 +432,16 @@ void initAsciiMap() {
         "**    ",
     }, 7);
 
+    putAsciiMap('.', (string[]) {
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "***  ",
+        "***  ",
+    }, 7);
+
 }
 
 bool asciiMapContains(const char charEnter) {
@@ -532,7 +542,7 @@ int main()
                 setLetter(lineMessage,toupper(tempS[0]));
                 characterCounter++;
             }
-            cout << endl;
+            cout << endl << endl;
         }
         else
         {
@@ -544,7 +554,7 @@ int main()
                     lineMessage[x][0] = "";   //reset string to empty
                     characterCounter = 0;
                 }
-                cout << endl;
+                cout << endl << endl;
             }
         }
         setLetter(lineMessage,toupper(phraseEntered[k]));
