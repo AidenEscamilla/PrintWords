@@ -481,7 +481,8 @@ int main()
 
     string phraseEntered;
     int phraseLength;
-    int numLines;
+    int numLines,wordCounter = 0, spaceCounter = 0;
+    bool wordCutOff = true;
 
     cout << "Enter a phrase: " << endl;
     getline(cin,phraseEntered);
@@ -491,11 +492,12 @@ int main()
 
     numLines = ceil(static_cast<double>(phraseLength) / 13);
 
+    string *wordHolder = new string [phraseLength];
     string tempMessage[7][NUM_COLUMNS];
+    string lineMessage[7][NUM_COLUMNS];
 
-    for(int k = 0; k < phraseLength; k++)   //add each char to the message
-    {
-            if((k % 13 == 0) && (k != 0)) //for every new line
+    /*
+    if((k % 13 == 0) && (k != 0)) //for every new line
             {
                 for(int x = 0; x < 7; x++)  //for every string in message
                 {
@@ -506,14 +508,60 @@ int main()
                 cout << "    ##########################################################################################################################################################################################################" << endl << endl;
 
             }
-            
-            setLetter(tempMessage,toupper(phraseEntered[k]));
+    */
+
+    for(int k = 0; k < phraseLength; k++)   //add each char to the message
+    {
+        if(phraseEntered[k] == ' ')
+            wordCutOff = false;
+        else
+            wordCutOff = true;
+
+        if(wordCutOff && (k % 13 == 0) && k!= 0)
+        {
+            for(int x = 0; x < 7; x++)  //for every string in message
+            {
+                printMessageLine(tempMessage, x);    //print the string then
+                tempMessage[x][0] = "";   //reset string to empty
+                lineMessage[x][0] = "";
+            }
+            for(int g = 0; g < wordCounter; g++)
+            {
+                string tempS = *wordHolder;
+                setLetter(lineMessage,toupper(tempS[g]));
+            }
+            cout << endl;
+        }
+        else
+        {
+            if((k % 13) == 0 && (k != 0)) //for every 13 characters
+            {
+                for(int x = 0; x < 7; x++)  //for every string in message
+                {
+                    printMessageLine(lineMessage, x);    //print the string then
+                    lineMessage[x][0] = "";   //reset string to empty
+                }
+                cout << endl;
+            }
+        }
+        setLetter(lineMessage,toupper(phraseEntered[k]));
+        wordHolder[wordCounter] = phraseEntered[k];
+        wordCounter++;
+        if(phraseEntered[k] == ' ')
+        {
+            for(int y = 0; y < 7; y++)
+            {
+                tempMessage[y][0] = lineMessage[y][0];
+            }
+            *wordHolder = "";
+            wordCounter = 0;
+        }
     }
     do //print last line of the message or messages shorter than 13
     {
         for(int i = 0; i < 7; i++)  //for the message
                 {
-                    printMessageLine(tempMessage, i);   //print each line
+                    printMessageLine(lineMessage, i);   //print each line
                 }
                 cout << endl;
     }while(false);  //only do it once
