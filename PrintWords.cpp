@@ -546,7 +546,7 @@ int main()
         }
         else
         {
-            if((characterCounter % 13) == 0 && (k != 0)) //for every 13 characters
+            if((characterCounter % 10) == 0 && (k != 0)) //for every 13 characters
             {
                 for(int x = 0; x < 7; x++)  //for every string in message
                 {
